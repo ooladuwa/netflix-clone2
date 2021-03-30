@@ -14,6 +14,7 @@ export default function Signin() {
   const [error, setError] = useState("");
 
   const isInvalid = password === "" || emailAddress.length < 8;
+
   const handleSignin = (event) => {
     event.preventDefault();
 

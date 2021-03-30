@@ -15,7 +15,6 @@ export default function Home() {
           <Feature.SubTitle>
             Watch anywhere. Cancel at any time.
           </Feature.SubTitle>
-
           <OptForm>
             <OptForm.Text>
               Ready to watch? Enter your email to create or restart your
