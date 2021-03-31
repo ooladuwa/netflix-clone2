@@ -3,7 +3,7 @@ import { Spinner, LockBody, Picture, ReleaseBody } from "./styles/loading";
 
 export default function Loading({ src, ...restProps }) {
   return (
-    <Spinner>
+    <Spinner {...restProps}>
       <LockBody />
       <Picture src={`/images/users/${src}.png`} />
     </Spinner>
@@ -11,5 +11,5 @@ export default function Loading({ src, ...restProps }) {
 }
 
 Loading.ReleaseBody = function LoadingReleaseBody() {
-  return <this.ReleaseBody />;
+  return <ReleaseBody />;
 };
