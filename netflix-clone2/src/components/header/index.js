@@ -5,17 +5,29 @@ import {
   Container,
   Logo,
   ButtonLink,
-  // Title,
-  // SubTitle,
-  // Text,
-  // Input,
-  // Button,
-  // Icon,
+  Feature,
+  FeatureCallOut,
+  Text,
 } from "./styles/header";
 
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
 }
+
+Header.Feature = function HeaderFeature({ children, ...restProps }) {
+  return <Feature>{children}</Feature>;
+};
+
+Header.FeatureCallOut = function HeaderFeatureCallOut({
+  children,
+  ...restProps
+}) {
+  return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
+};
+
+Header.Text = function HeaderText({ children, ...restProps }) {
+  return <Text {...restProps}>{children}</Text>;
+};
 
 Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -32,27 +44,3 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
     </ReactRouterLink>
   );
 };
-
-// Header.Title = function HeaderTitle({ children, ...restProps }) {
-//   return <Title {...restProps}>{children}</Title>;
-// };
-
-// Header.SubTitle = function HeaderSubTitle({ children, ...restProps }) {
-//   return <SubTitle {...restProps}>{children}</SubTitle>;
-// };
-
-// Header.Text = function HeaderText({ children, ...restProps }) {
-//   return <Text {...restProps}>{children}</Text>;
-// };
-
-// Header.Input = function HeaderInput({ children, ...restProps }) {
-//   return <Input {...restProps}>{children}</Input>;
-// };
-
-// Header.Button = function HeaderButton({ children, ...restProps }) {
-//   return <Button {...restProps}>{children}</Button>;
-// };
-
-// Header.Icon = function HeaderIcon({ children, ...restProps }) {
-//   return <Icon {...restProps}>{children}</Icon>;
-// };
