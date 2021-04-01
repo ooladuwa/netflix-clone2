@@ -55,6 +55,26 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
   return <Meta {...restProps}>{children}</Meta>;
 };
 
+Card.Item = function CardItem({ item, children, ...restProps }) {
+  const { setShowFeature, setItemFeature } = useContext(FeatureContext);
+
+  return (
+    <Item
+      onClick={() => {
+        setItemFeature(item);
+        setShowFeature(true);
+      }}
+      {...restProps}
+    >
+      {children}
+    </Item>
+  );
+};
+
+Card.Image = function CardImage({ ...restProps }) {
+  return <Image {...restProps} />;
+};
+
 Card.Feature = function CardFeature({ children, category, ...restProps }) {
   const { showFeature, itemFeature, setShowFeature } = useContext(
     FeatureContext
@@ -90,24 +110,4 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
 
 Card.FeatureText = function CardFeatureText({ children, ...restProps }) {
   return <FeatureText {...restProps}>{children}</FeatureText>;
-};
-
-Card.Item = function CardItem({ item, children, ...restProps }) {
-  const { setShowFeature, setItemFeature } = useContext(FeatureContext);
-
-  return (
-    <Item
-      onClick={() => {
-        setItemFeature(item);
-        setShowFeature(true);
-      }}
-      {...restProps}
-    >
-      {children}
-    </Item>
-  );
-};
-
-Card.Image = function CardImage({ ...restProps }) {
-  return <Image {...restProps} />;
 };

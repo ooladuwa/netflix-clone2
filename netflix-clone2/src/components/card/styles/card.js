@@ -65,7 +65,9 @@ export const Entities = styled.div`
 `;
 
 export const Meta = styled.div`
-  display: none;
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
   position: absolute;
   bottom: 0;
   padding: 10px;
